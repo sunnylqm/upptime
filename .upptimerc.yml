@@ -113,8 +113,6 @@ notifications:
   - type: email
     to: sunnylqm@qq.com
 
-  - type: telegram
-
 workflowSchedule:
   uptime: "*/5 * * * *"
   responseTime: "*/5 * * * *"
