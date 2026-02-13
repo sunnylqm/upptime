@@ -1,0 +1,123 @@
+# Upptime configuration
+# https://upptime.js.org
+
+owner: sunnylqm
+repo: upptime
+
+sites:
+  # --- CDN / 下载服务 (非错误状态码即可) ---
+  - name: React Native CN CDN
+    url: https://dl.react-native.cn/test
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 202
+      - 203
+      - 204
+      - 301
+      - 302
+      - 303
+      - 304
+      - 307
+      - 308
+
+  - name: Pushy CDN
+    url: https://pushy.cdn.dfyun.com.cn/test
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 202
+      - 203
+      - 204
+      - 301
+      - 302
+      - 303
+      - 304
+      - 307
+      - 308
+
+  - name: Charmlot CDN
+    url: https://dl.charmlot.com/test
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 202
+      - 203
+      - 204
+      - 301
+      - 302
+      - 303
+      - 304
+      - 307
+      - 308
+
+  # --- API 服务 (要求返回 200) ---
+  - name: RNUpdate 1
+    url: https://1.rnupdate.online/api/status
+    expectedStatusCodes:
+      - 200
+
+  - name: RNUpdate 2
+    url: https://2.rnupdate.online/api/status
+    expectedStatusCodes:
+      - 200
+
+  - name: RNUpdate 3
+    url: https://3.rnupdate.online/api/status
+    expectedStatusCodes:
+      - 200
+
+  - name: RNUpdate 4
+    url: https://4.rnupdate.online/api/status
+    expectedStatusCodes:
+      - 200
+
+  - name: RNUpdate 5
+    url: https://5.rnupdate.online/api/status
+    expectedStatusCodes:
+      - 200
+
+  - name: ReactNative CN API
+    url: https://p.reactnative.cn/api/status
+    expectedStatusCodes:
+      - 200
+
+  - name: ReactNative CN S1
+    url: http://s1.reactnative.cn/api/status
+    expectedStatusCodes:
+      - 200
+
+  - name: Cresc SG
+    url: https://sg.cresc.dev/status
+    expectedStatusCodes:
+      - 200
+
+  - name: Cresc KR
+    url: https://kr.cresc.dev/status
+    expectedStatusCodes:
+      - 200
+
+status-website:
+  cname: ""
+  baseUrl: /upptime
+  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
+  name: Service Status
+  theme: light
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+
+notifications:
+  - type: email
+    to: sunnylqm@qq.com
+
+  - type: telegram
+    channel: "$TELEGRAM_CHAT_ID"
+
+workflowSchedule:
+  uptime: "*/5 * * * *"
+  responseTime: "*/5 * * * *"
+  updates: "0 0 * * *"
+  graphs: "0 0 * * *"
