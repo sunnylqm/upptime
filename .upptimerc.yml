@@ -114,7 +114,6 @@ notifications:
     to: sunnylqm@qq.com
 
   - type: telegram
-    channel: "$TELEGRAM_CHAT_ID"
 
 workflowSchedule:
   uptime: "*/5 * * * *"
