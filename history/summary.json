@@ -184,19 +184,19 @@
     "url": "https://sg.cresc.dev/status",
     "icon": "https://icons.duckduckgo.com/ip3/sg.cresc.dev.ico",
     "slug": "cresc-sg",
-    "status": "down",
-    "uptime": "99.98%",
-    "uptimeDay": "99.98%",
-    "uptimeWeek": "99.98%",
-    "uptimeMonth": "99.98%",
-    "uptimeYear": "99.98%",
-    "time": 634,
-    "timeDay": 634,
-    "timeWeek": 634,
-    "timeMonth": 634,
-    "timeYear": 634,
+    "status": "up",
+    "uptime": "94.84%",
+    "uptimeDay": "94.84%",
+    "uptimeWeek": "94.84%",
+    "uptimeMonth": "94.84%",
+    "uptimeYear": "94.84%",
+    "time": 652,
+    "timeDay": 652,
+    "timeWeek": 652,
+    "timeMonth": 652,
+    "timeYear": 652,
     "dailyMinutesDown": {
-      "2026-02-14": 0
+      "2026-02-14": 39
     }
   },
   {
