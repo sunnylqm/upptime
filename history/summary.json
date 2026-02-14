@@ -184,18 +184,20 @@
     "url": "https://sg.cresc.dev/status",
     "icon": "https://icons.duckduckgo.com/ip3/sg.cresc.dev.ico",
     "slug": "cresc-sg",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 646,
-    "timeDay": 646,
-    "timeWeek": 646,
-    "timeMonth": 646,
-    "timeYear": 646,
-    "dailyMinutesDown": {}
+    "status": "down",
+    "uptime": "99.98%",
+    "uptimeDay": "99.98%",
+    "uptimeWeek": "99.98%",
+    "uptimeMonth": "99.98%",
+    "uptimeYear": "99.98%",
+    "time": 634,
+    "timeDay": 634,
+    "timeWeek": 634,
+    "timeMonth": 634,
+    "timeYear": 634,
+    "dailyMinutesDown": {
+      "2026-02-14": 0
+    }
   },
   {
     "name": "Cresc KR",
