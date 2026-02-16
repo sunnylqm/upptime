@@ -1,7 +1,7 @@
 url: https://pushy.cdn.dfyun.com.cn/test
-status: up
-code: 200
-responseTime: 1906
-lastUpdated: 2026-02-16T20:01:32.405Z
+status: down
+code: 502
+responseTime: 1920
+lastUpdated: 2026-02-16T20:29:33.072Z
 startTime: 2026-02-13T15:34:22.020Z
 generator: Upptime <https://github.com/upptime/upptime>
