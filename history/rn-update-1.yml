@@ -1,7 +1,7 @@
 url: https://1.rnupdate.online/api/status
-status: up
-code: 200
-responseTime: 1263
-lastUpdated: 2026-02-19T02:52:22.130Z
+status: down
+code: 502
+responseTime: 1351
+lastUpdated: 2026-02-19T04:27:09.677Z
 startTime: 2026-02-13T15:34:25.622Z
 generator: Upptime <https://github.com/upptime/upptime>
