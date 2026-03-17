@@ -53,47 +53,47 @@ sites:
 
   # --- API 服务 (要求返回 200) ---
   - name: RNUpdate 1
-    url: https://1.rnupdate.online/api/status
+    url: https://1.rnupdate.online/api/task/list
     expectedStatusCodes:
       - 200
 
   - name: RNUpdate 2
-    url: https://2.rnupdate.online/api/status
+    url: https://2.rnupdate.online/api/task/list
     expectedStatusCodes:
       - 200
 
   - name: RNUpdate 3
-    url: https://3.rnupdate.online/api/status
+    url: https://3.rnupdate.online/api/task/list
     expectedStatusCodes:
       - 200
 
   - name: RNUpdate 4
-    url: https://4.rnupdate.online/api/status
+    url: https://4.rnupdate.online/api/task/list
     expectedStatusCodes:
       - 200
 
   - name: RNUpdate 5
-    url: https://5.rnupdate.online/api/status
+    url: https://5.rnupdate.online/api/task/list
     expectedStatusCodes:
       - 200
 
   - name: ReactNative CN API
-    url: https://p.reactnative.cn/api/status
+    url: https://p.reactnative.cn/api/task/list
     expectedStatusCodes:
       - 200
 
   - name: ReactNative CN S1
-    url: http://s1.reactnative.cn/api/status
+    url: http://s1.reactnative.cn/api/task/list
     expectedStatusCodes:
       - 200
 
   - name: Cresc SG
-    url: https://sg.cresc.dev/status
+    url: https://sg.cresc.dev/task/list
     expectedStatusCodes:
       - 200
 
   - name: Cresc KR
-    url: https://kr.cresc.dev/status
+    url: https://kr.cresc.dev/task/list
     expectedStatusCodes:
       - 200
 
