@@ -72,11 +72,6 @@ sites:
     expectedStatusCodes:
       - 200
 
-  - name: RNUpdate 5
-    url: https://5.rnupdate.online/api/task/list
-    expectedStatusCodes:
-      - 200
-
   - name: ReactNative CN API
     url: https://p.reactnative.cn/api/task/list
     expectedStatusCodes:
