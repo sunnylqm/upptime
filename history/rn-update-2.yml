@@ -1,7 +1,7 @@
 url: https://2.rnupdate.online/api/task/list
-status: up
-code: 200
-responseTime: 1124
-lastUpdated: 2026-04-15T01:45:27.744Z
+status: down
+code: 502
+responseTime: 3322
+lastUpdated: 2026-05-20T16:39:37.448Z
 startTime: 2026-02-13T15:34:27.351Z
 generator: Upptime <https://github.com/upptime/upptime>
