@@ -82,16 +82,6 @@ sites:
     expectedStatusCodes:
       - 200
 
-  - name: Cresc SG
-    url: https://sg.cresc.dev/task/list
-    expectedStatusCodes:
-      - 200
-
-  - name: Cresc KR
-    url: https://kr.cresc.dev/task/list
-    expectedStatusCodes:
-      - 200
-
 status-website:
   cname: ""
   baseUrl: /upptime
