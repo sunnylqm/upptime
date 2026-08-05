@@ -1,0 +1,28 @@
+# 把仓库历史压成单个提交,控制体积。
+# 注意:upptime 的可用率/响应时间统计与图表都是从 git 提交历史算出来的,
+# squash 之后这些统计从零开始重新累计(当前 up/down 状态与告警不受影响)。
+# 因此只提供手动触发;建议每年初、或体积超过 ~500MB 时跑一次。
+name: Squash History
+on:
+  workflow_dispatch:
+
+concurrency: squash-history
+
+permissions:
+  contents: write
+
+jobs:
+  squash:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Squash to single commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan squashed
+          git add -A
+          git commit -m ":card_file_box: squash history $(date -u +%F)"
+          git push origin squashed:${{ github.ref_name }} --force

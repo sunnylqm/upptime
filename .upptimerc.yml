@@ -82,6 +82,28 @@ sites:
     expectedStatusCodes:
       - 200
 
+  # --- 主入口域名 (国内线路→jd 轮换, 默认线路→Cloudflare) ---
+  - name: Update Entry (react-native.cn)
+    url: https://update.react-native.cn/api/task/list
+    expectedStatusCodes:
+      - 200
+
+  - name: Update Entry (reactnative.cn)
+    url: https://update.reactnative.cn/api/task/list
+    expectedStatusCodes:
+      - 200
+
+  # --- Cresc (Cloud Run) ---
+  - name: Cresc API (cresc.dev)
+    url: https://api.cresc.dev/status
+    expectedStatusCodes:
+      - 200
+
+  - name: Cresc API (cresc.app)
+    url: https://api.cresc.app/status
+    expectedStatusCodes:
+      - 200
+
 status-website:
   cname: ""
   baseUrl: /upptime
