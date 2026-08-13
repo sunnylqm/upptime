@@ -1,7 +1,7 @@
 url: https://update.reactnative.cn/api/task/list
-status: down
-code: 500
-responseTime: 280
-lastUpdated: 2026-08-13T05:08:05.259Z
+status: up
+code: 200
+responseTime: 767
+lastUpdated: 2026-08-13T06:39:53.942Z
 startTime: 2026-08-05T05:58:03.056Z
 generator: Upptime <https://github.com/upptime/upptime>
