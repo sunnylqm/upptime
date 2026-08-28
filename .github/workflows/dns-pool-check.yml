@@ -1,5 +1,5 @@
 # DNS 解析池抽样:直查阿里云权威 DNS,验证国内线路的加权 CNAME 池
-# 里 1-4.rnupdate.online 四台都在、默认线路正常指向 Cloudflare。
+# 里 xa.reactnative.cn、zj.reactnative.cn 等节点都在、默认线路正常指向 Cloudflare。
 # upptime 的 HTTP 探测只能发现"节点挂了",发现不了"节点健康但被解析池
 # 摘除/权重异常",这个 workflow 补的就是这一层。
 name: DNS Pool Check
@@ -35,9 +35,9 @@ jobs:
             done
             dist=$(echo "$answers" | grep -v '^$' | sort | uniq -c | sort -rn)
             REPORT="$REPORT"$'\n'"== $domain(国内线路 24 次采样)=="$'\n'"$dist"
-            for n in 1 2 3 4; do
-              if ! echo "$answers" | grep -q "$n\.rnupdate\.online"; then
-                FAIL="$FAIL- \`$domain\`:\`$n.rnupdate.online\` 未出现在 24 次采样中"$'\n'
+            for node in xa zj; do
+              if ! echo "$answers" | grep -q "$node\.reactnative\.cn"; then
+                FAIL="$FAIL- \`$domain\`:\`$node.reactnative.cn\` 未出现在 24 次采样中"$'\n'
               fi
             done
             def=$(dig +short +time=5 +tries=2 "$domain" "@$NS" | head -1) || def=""
