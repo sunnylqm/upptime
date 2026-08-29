@@ -1,0 +1,117 @@
+# Upptime configuration
+# https://upptime.js.org
+
+owner: sunnylqm
+repo: upptime
+
+sites:
+  # --- CDN / 下载服务 (非错误状态码即可) ---
+  - name: React Native CN CDN
+    url: https://dl.react-native.cn/test
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 202
+      - 203
+      - 204
+      - 301
+      - 302
+      - 303
+      - 304
+      - 307
+      - 308
+
+  - name: Pushy CDN
+    url: https://pushy.cdn.dfyun.com.cn/test
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 202
+      - 203
+      - 204
+      - 301
+      - 302
+      - 303
+      - 304
+      - 307
+      - 308
+
+  - name: Charmlot CDN
+    url: https://dl.charmlot.com/test
+    expectedStatusCodes:
+      - 200
+      - 201
+      - 202
+      - 203
+      - 204
+      - 301
+      - 302
+      - 303
+      - 304
+      - 307
+      - 308
+
+  # --- API 服务 (要求返回 200) ---
+  - name: ReactNative CN XA
+    url: https://xa.reactnative.cn/api/task/list
+    expectedStatusCodes:
+      - 200
+
+  - name: ReactNative CN ZJ
+    url: https://zj.reactnative.cn/api/task/list
+    expectedStatusCodes:
+      - 200
+
+  - name: ReactNative CN API
+    url: https://p.reactnative.cn/api/task/list
+    expectedStatusCodes:
+      - 200
+
+  - name: ReactNative CN S1
+    url: http://s1.reactnative.cn/api/task/list
+    expectedStatusCodes:
+      - 200
+
+  # --- 主入口域名 (国内线路轮换, 默认线路→Cloudflare) ---
+  - name: Update Entry (react-native.cn)
+    url: https://update.react-native.cn/api/task/list
+    expectedStatusCodes:
+      - 200
+
+  - name: Update Entry (reactnative.cn)
+    url: https://update.reactnative.cn/api/task/list
+    expectedStatusCodes:
+      - 200
+
+  # --- Cresc (Cloud Run) ---
+  - name: Cresc API (cresc.dev)
+    url: https://api.cresc.dev/status
+    expectedStatusCodes:
+      - 200
+
+  - name: Cresc API (cresc.app)
+    url: https://api.cresc.app/status
+    expectedStatusCodes:
+      - 200
+
+status-website:
+  cname: ""
+  baseUrl: /upptime
+  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
+  name: Service Status
+  theme: light
+  navbar:
+    - title: Status
+      href: /
+    - title: GitHub
+      href: https://github.com/$OWNER/$REPO
+
+notifications:
+  - type: email
+    to: sunnylqm@qq.com
+
+workflowSchedule:
+  uptime: "*/5 * * * *"
+  responseTime: "*/5 * * * *"
+  updates: "0 0 * * *"
+  graphs: "0 0 * * *"

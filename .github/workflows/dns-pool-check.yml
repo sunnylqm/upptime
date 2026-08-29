@@ -1,0 +1,76 @@
+# DNS 解析池抽样:直查阿里云权威 DNS,验证国内线路的加权 CNAME 池
+# 里 xa.reactnative.cn、zj.reactnative.cn 等节点都在、默认线路正常指向 Cloudflare。
+# upptime 的 HTTP 探测只能发现"节点挂了",发现不了"节点健康但被解析池
+# 摘除/权重异常",这个 workflow 补的就是这一层。
+name: DNS Pool Check
+on:
+  schedule:
+    - cron: "23 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sample authoritative DNS
+        id: probe
+        env:
+          NS: dns9.hichina.com
+          # 电信/联通/移动等国内网段,权威按 ECS 分线路应答
+          SUBNETS: "219.140.60.0 123.123.10.0 39.144.93.0 112.32.0.0 58.16.19.0 222.85.0.0"
+        run: |
+          set -uo pipefail
+          FAIL=""
+          REPORT=""
+          for domain in update.react-native.cn update.reactnative.cn; do
+            answers=""
+            for net in $SUBNETS; do
+              for i in 1 2 3 4; do
+                ans=$(dig +short +time=5 +tries=2 +subnet="$net/24" "$domain" "@$NS" | head -1) || ans=""
+                answers="$answers"$'\n'"$ans"
+              done
+            done
+            dist=$(echo "$answers" | grep -v '^$' | sort | uniq -c | sort -rn)
+            REPORT="$REPORT"$'\n'"== $domain(国内线路 24 次采样)=="$'\n'"$dist"
+            for node in xa zj; do
+              if ! echo "$answers" | grep -q "$node\.reactnative\.cn"; then
+                FAIL="$FAIL- \`$domain\`:\`$node.reactnative.cn\` 未出现在 24 次采样中"$'\n'
+              fi
+            done
+            def=$(dig +short +time=5 +tries=2 "$domain" "@$NS" | head -1) || def=""
+            REPORT="$REPORT"$'\n'"默认线路 -> ${def:-(空应答)}"
+            case "$def" in
+              *cresc.app*) ;;
+              *) FAIL="$FAIL- \`$domain\`:默认线路应答异常:\`${def:-空}\`(预期 CNAME 到 cresc.app)"$'\n' ;;
+            esac
+          done
+          echo "$REPORT" >> "$GITHUB_STEP_SUMMARY"
+          {
+            echo "report<<EOF"
+            echo "$REPORT"
+            echo "EOF"
+            echo "fail<<EOF"
+            echo "$FAIL"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+          [ -z "$FAIL" ]
+
+      - name: File issue on failure
+        if: failure() && steps.probe.outputs.fail != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          FAIL: ${{ steps.probe.outputs.fail }}
+          REPORT: ${{ steps.probe.outputs.report }}
+        run: |
+          TITLE="🌐 DNS 解析池异常"
+          BODY="$FAIL"$'\n\n'"<details><summary>采样明细</summary>"$'\n\n```\n'"$REPORT"$'\n```\n\n'"</details>"$'\n\n'"Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          existing=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --body "$BODY" --assignee sunnylqm
+          fi
