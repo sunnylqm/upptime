@@ -112,6 +112,8 @@ notifications:
 
 workflowSchedule:
   uptime: "*/5 * * * *"
-  responseTime: "*/5 * * * *"
+  # Response-time aggregation rechecks every endpoint. Run it daily while
+  # retaining five-minute uptime checks for incident detection.
+  responseTime: "0 23 * * *"
   updates: "0 0 * * *"
   graphs: "0 0 * * *"
