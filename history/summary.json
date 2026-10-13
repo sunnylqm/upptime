@@ -83,21 +83,21 @@
     "url": "https://xa.reactnative.cn/api/task/list",
     "icon": "https://icons.duckduckgo.com/ip3/xa.reactnative.cn.ico",
     "slug": "react-native-cn-xa",
-    "status": "down",
-    "uptime": "98.93%",
-    "uptimeDay": "86.69%",
-    "uptimeWeek": "98.10%",
-    "uptimeMonth": "98.39%",
-    "uptimeYear": "98.93%",
-    "time": 1328,
-    "timeDay": 0,
-    "timeWeek": 1239,
-    "timeMonth": 1373,
-    "timeYear": 1328,
+    "status": "up",
+    "uptime": "98.57%",
+    "uptimeDay": "69.71%",
+    "uptimeWeek": "95.67%",
+    "uptimeMonth": "97.83%",
+    "uptimeYear": "98.57%",
+    "time": 1324,
+    "timeDay": 1106,
+    "timeWeek": 1220,
+    "timeMonth": 1364,
+    "timeYear": 1324,
     "dailyMinutesDown": {
       "2026-09-22": 278,
       "2026-09-25": 235,
-      "2026-10-13": 192
+      "2026-10-13": 436
     }
   },
   {
