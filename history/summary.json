@@ -22,17 +22,17 @@
     "url": "https://pushy.cdn.dfyun.com.cn/test",
     "icon": "https://icons.duckduckgo.com/ip3/pushy.cdn.dfyun.com.cn.ico",
     "slug": "pushy-cdn",
-    "status": "down",
-    "uptime": "95.31%",
-    "uptimeDay": "90.25%",
-    "uptimeWeek": "97.59%",
-    "uptimeMonth": "99.45%",
-    "uptimeYear": "95.31%",
-    "time": 3626,
-    "timeDay": 6398,
-    "timeWeek": 6981,
-    "timeMonth": 4272,
-    "timeYear": 3626,
+    "status": "up",
+    "uptime": "95.26%",
+    "uptimeDay": "88.14%",
+    "uptimeWeek": "95.90%",
+    "uptimeMonth": "99.06%",
+    "uptimeYear": "95.26%",
+    "time": 3589,
+    "timeDay": 6325,
+    "timeWeek": 6387,
+    "timeMonth": 4189,
+    "timeYear": 3589,
     "dailyMinutesDown": {
       "2026-02-18": 33,
       "2026-03-01": 18,
@@ -57,7 +57,7 @@
       "2026-08-26": 198,
       "2026-08-25": 663,
       "2026-10-13": 243,
-      "2026-10-14": 0
+      "2026-10-14": 171
     }
   },
   {
