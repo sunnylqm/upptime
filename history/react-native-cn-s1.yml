@@ -1,7 +1,7 @@
-url: http://s1.reactnative.cn/api/task/list
+url: http://s1.reactnative.cn/api/status?deep=1
 status: up
 code: 200
-responseTime: 641
-lastUpdated: 2026-11-04T02:51:40.475Z
+responseTime: 675
+lastUpdated: 2026-11-05T00:04:28.044Z
 startTime: 2026-02-13T15:34:35.191Z
 generator: Upptime <https://github.com/upptime/upptime>
