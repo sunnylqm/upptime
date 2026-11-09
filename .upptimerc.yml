@@ -52,11 +52,6 @@ sites:
       - 308
 
   # --- API 服务 (要求返回 200) ---
-  - name: ReactNative CN XA
-    url: https://xa.reactnative.cn/api/status?deep=1
-    expectedStatusCodes:
-      - 200
-
   - name: ReactNative CN ZJ
     url: https://zj.reactnative.cn/api/status?deep=1
     expectedStatusCodes:
